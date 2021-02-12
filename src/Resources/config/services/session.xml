@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="vio_redis.session.redis" class="Redis">
+            <call method="connect">
+                <argument>%vio_redis.session.host%</argument>
+                <argument>%vio_redis.session.port%</argument>
+            </call>
+            <call method="auth">
+                <argument>%vio_redis.session.password%</argument>
+            </call>
+            <call method="select">
+                <argument>%vio_redis.session.db%</argument>
+            </call>
+        </service>
+
+        <service id="vio_redis.session.redis_session_handler" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler" public="true">
+            <argument id="vio_redis.session.redis" type="service"/>
+        </service>
+
+    </services>
+</container>
