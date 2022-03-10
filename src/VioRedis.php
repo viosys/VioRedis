@@ -41,23 +41,6 @@ class VioRedis extends Plugin
                 'cache' => [
                     'app' => 'cache.adapter.redis',
                     'system' => 'cache.adapter.redis',
-                    'pools' => [
-                        'serializer' => [
-                            'adapter' => 'cache.adapter.redis'
-                        ],
-                        'annotations' => [
-                            'adapter' => 'cache.adapter.redis'
-                        ],
-                        'property_info' => [
-                            'adapter' => 'cache.adapter.redis'
-                        ],
-                        'messenger' => [
-                            'adapter' => 'cache.adapter.redis'
-                        ],
-                        'property_access' => [
-                            'adapter' => 'cache.adapter.redis'
-                        ],
-                    ],
                     'default_redis_provider' => "redis://%vio_redis.cache.password%@%vio_redis.cache.host%:%vio_redis.cache.port%/%vio_redis.cache.db%"
                 ]
             ]);
