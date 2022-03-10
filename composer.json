@@ -1,5 +1,5 @@
 {
-    "name": "vio/redis-plugin",
+    "name": "viosys/redis-plugin",
     "version": "1.0.1",
     "description": "Shopware 6 plugin, to configure redis cache",
     "type": "shopware-platform-plugin",
